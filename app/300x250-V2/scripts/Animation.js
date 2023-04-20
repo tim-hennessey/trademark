@@ -17,12 +17,28 @@ app.Animation = (function () {
     };
 
     var anim = bodymovin.loadAnimation(animData);
+    var cta = document.getElementById('cta');
+    var buttonExit = document.getElementById('button-exit');
+    var tl1 = new TimelineMax({paused:true});
 
 	// --------------------------------------------------------------------------------------
 	// set default properties
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
+
+		t.to(cta, .5, {delay:5, opacity:1, ease:Sine.easeInOut});
+
+		tl1.to(cta, .25, {scale:1.1, ease:Sine.easeOut})
+		.to(cta, .25, {scale:1, ease:Sine.easeIn});
+
+		buttonExit.addEventListener('mouseover', function () {
+
+				tl1.play(0);
+
+			});
+
+		
 
 		
 	}

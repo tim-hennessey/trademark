@@ -17,12 +17,17 @@ app.Animation = (function () {
     };
 
     var anim = bodymovin.loadAnimation(animData);
+    
 
 	// --------------------------------------------------------------------------------------
 	// set default properties
 	function initialize() {
 		// DO NOT EDIT: reveals banner once loaded
 		t.set(banner, {opacity:1});
+
+		
+
+
 
 		
 	}
